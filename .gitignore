@@ -1,6 +1,13 @@
+# So we don't upload projects 100 times larger #
 target
+
+# IDE Agnostic please #
+.settings
+.classpath
+.project
 *.iml
 
+# Just no #
 *.class
 
 # Package Files #

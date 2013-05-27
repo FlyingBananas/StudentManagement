@@ -3,7 +3,6 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-
     <artifactId>root</artifactId>
     <groupId>dbd</groupId>
     <version>1.0</version>
@@ -124,6 +123,7 @@
     <!--Modules-->
     <modules>
        <module>service</module>
+       <module>frontend</module>
     </modules>
 
 </project>
