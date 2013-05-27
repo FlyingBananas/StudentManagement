@@ -123,8 +123,7 @@
 
     <!--Modules-->
     <modules>
-
-       <module> service</module>
+       <module>service</module>
     </modules>
 
 </project>

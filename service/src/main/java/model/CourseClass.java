@@ -20,6 +20,7 @@ public class CourseClass {
 
     private Date date;
 
+    @DBRef
     private Teacher teacher;
 
     public ObjectId getId() {

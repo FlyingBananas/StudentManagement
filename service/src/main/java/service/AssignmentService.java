@@ -5,7 +5,7 @@ package service;
  *
  * Add methods on this interface and then implement on the corresponding Impl.
  */
-public interface StudentService {
+public interface AssignmentService {
 
 
 }

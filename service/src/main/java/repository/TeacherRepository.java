@@ -10,9 +10,11 @@ import java.util.List;
 
 public interface TeacherRepository extends PagingAndSortingRepository<Teacher, ObjectId>{
 
-    Teacher findOneByLoginUsernameAndLoginPassword(String username, String password);
+    public Teacher findOneByLoginUsernameAndLoginPassword(String username, String password);
 
-    List<Teacher> findByName(String name);
+    public List<Teacher> findByName(String name);
 
-    List<Teacher> findByName(String name, Sort sort);
+    public List<Teacher> findByName(String name, Sort sort);
+
+
 }

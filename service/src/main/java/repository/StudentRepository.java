@@ -9,11 +9,11 @@ import java.util.List;
 
 public interface StudentRepository extends PagingAndSortingRepository<Student,String> {
 
-    Student findOneByMatriculationNumber(String matriculationNumber);
+    public Student findOneByMatriculationNumber(String matriculationNumber);
 
-    List<Student> findByName(String name);
+    public List<Student> findByName(String name);
 
-    List<Student> findByName(String name, Sort sort);
+    public List<Student> findByName(String name, Sort sort);
 
-    Student findOneByLoginUsernameAndLoginPassword(String username, String password);
+    public Student findOneByLoginUsernameAndLoginPassword(String username, String password);
 }

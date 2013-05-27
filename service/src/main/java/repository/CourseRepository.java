@@ -9,12 +9,23 @@ import java.util.List;
 
 public interface CourseRepository extends PagingAndSortingRepository<Course, ObjectId> {
 
-    Course findOneByYearAndName(int year, String name);
+    public Course findOneByYearAndName(int year, String name);
 
-    List<Course> findByYear(int year);
+    public List<Course> findByYear(int year);
 
-    List<Course> findByYear(int year, Sort sort);
+    public List<Course> findByYear(int year, Sort sort);
 
+    public List<Course> findByYearGreaterThan(int year);
+
+    public  List<Course> findByYearGreaterThan(int year, Sort sort);
+
+    public List<Course> findByYearLessThan(int year);
+
+    public List<Course> findByYearLessThan(int year, Sort sort);
+
+    public List<Course> findByYearBetween(int startngYear, int endYear);
+
+    public List<Course> findByYearBetween(int startngYear, int endYear, Sort sort);
 
 
 }
