@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                            http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+                            http://www.springframework.org/schema/data/mongo http://www.springframework.org/schema/data/mongo/spring-mongo.xsd">
+
+    <!-- Activate Spring Data MongoDB repository support -->
+    <mongo:repositories base-package="repository" mongo-template-ref="mongoTemplate"/>
+
+    <!-- Template for performing MongoDB operations -->
+    <bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate"
+          c:mongo-ref="mongo" c:databaseName="${mongo.db.name}"/>
+
+    <!-- MongoDB host -->
+    <mongo:mongo host="${mongo.host.name}" port="${mongo.host.port}" id="mongo"/>
+</beans>
