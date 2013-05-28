@@ -18,7 +18,7 @@ public class CourseClass {
     @DBRef
     private Course course;
 
-    private Date date;
+    private Date classDate;
 
     @DBRef
     private Teacher teacher;
@@ -39,12 +39,12 @@ public class CourseClass {
         this.type = type;
     }
 
-    public Date getDate() {
-        return date;
+    public Date getClassDate() {
+        return classDate;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setClassDate(Date classDate) {
+        this.classDate = classDate;
     }
 
     public Teacher getTeacher() {

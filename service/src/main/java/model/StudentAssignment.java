@@ -24,7 +24,8 @@ public class StudentAssignment {
 
     private String description;
 
-    private Date submissionDate;
+
+    private Date submission;
 
     private int grade;
 
@@ -47,12 +48,12 @@ public class StudentAssignment {
         this.student = student;
     }
 
-    public Date getSubmissionDate() {
-        return submissionDate;
+    public Date getSubmission() {
+        return submission;
     }
 
-    public void setSubmissionDate(Date submissionDate) {
-        this.submissionDate = submissionDate;
+    public void setSubmission(Date submission) {
+        this.submission = submission;
     }
 
     public List<SubmissionDocument> getDocuments() {

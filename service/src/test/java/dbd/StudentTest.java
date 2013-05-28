@@ -29,7 +29,6 @@ public class StudentTest {
     StudentRepository studentRepository;
 
     @Test
-    @Ignore
     public void doSomething() {
         Student student = new Student();
         student.setName("Feri");
@@ -44,7 +43,6 @@ public class StudentTest {
 
 
     @Test
-    @Ignore
     public void testRetrieveStudent() {
 
         String matriculationNumber = "1234423232";
@@ -54,7 +52,6 @@ public class StudentTest {
     }
 
     @Test
-    @Ignore
     public void testInsertManyStudents() {
 
         List<Student> students = new ArrayList<Student>();
