@@ -45,6 +45,21 @@ public class AssignmentServiceTests {
         Assert.notEmpty(assignments);
     }
     
+    @Test 
+    public void getStudentAssignment_GivenStudentAndAssignment_ReturnStudentAssignment()
+    {
+        Student student = studentRepository.findByName("Feri").get(0);
+        
+        Assignment assignment = 
+                assignmentService.getAssignmentByName("Crazy ass").get(0);
+        
+        StudentAssignment studentAssignment = 
+                assignmentService.getStudentAssignment(student, assignment);
+        
+        Assert.notNull(studentAssignment);
+        
+    }
+    
     @Test
     @Ignore
     public void saveAssignment_WhenCalled_SavesAssignemnt(){

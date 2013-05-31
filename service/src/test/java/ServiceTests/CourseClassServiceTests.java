@@ -12,6 +12,8 @@ import model.Course;
 import model.CourseClass;
 import model.CourseType;
 import model.LoginDetails;
+import model.Student;
+import model.StudentAttendance;
 import model.Teacher;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -20,6 +22,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.util.Assert;
+import repository.StudentRepository;
 import repository.TeacherRepository;
 import service.CourseClassService;
 import service.CourseService;
@@ -40,6 +43,9 @@ public class CourseClassServiceTests {
     @Autowired
     TeacherRepository teacherRepository;
     
+    @Autowired
+    StudentRepository studentRepository;
+    
     @Test
     public void getCourseClassesFromCourseOfType_GivenCourseAndType_ReturnsList()
     {
@@ -50,6 +56,34 @@ public class CourseClassServiceTests {
                 courseClassService.getCourseClassesFromCourseOfType(course, type);
         
         Assert.notEmpty(classes);
+    }
+    
+    @Test
+    public void getStudentAttendancesForCourseClass_GivenCourseClass_ReturnsList(){
+        Course course = courseService.getAllCourses().get(0);
+        CourseClass courseClass = 
+                courseClassService.getCourseClassesFromCourseOfType(course, CourseType.LECTURE)
+                                  .get(0);
+        
+         List<StudentAttendance> attendances = 
+                courseClassService.getStudentAttendancesForCourseClass(courseClass);
+         
+         Assert.notEmpty(attendances);
+    }
+    
+    @Test
+    @Ignore
+    public void saveStudentAttendancesForCourseClass_GivenCourseClassAndStudents_SavesAttendences(){
+        Course course = courseService.getAllCourses().get(0);
+        CourseClass courseClass = 
+                courseClassService.getCourseClassesFromCourseOfType(course, CourseType.LECTURE)
+                                  .get(0);
+        List<Student> students = (List<Student>)studentRepository.findAll(); 
+        
+        List<StudentAttendance> attendances = 
+                courseClassService.saveStudentAttendancesForCourseClass(courseClass, students);
+        
+        Assert.notEmpty(attendances);
     }
     
     @Test

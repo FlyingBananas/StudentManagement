@@ -2,6 +2,7 @@ package service;
 
 import java.util.List;
 import model.Assignment;
+import model.Student;
 import model.StudentAssignment;
 
 /**
@@ -16,6 +17,8 @@ public interface AssignmentService {
     public List<Assignment> getAssignmentByName(String name);
     
     public Assignment saveAssignment(Assignment assignment);
+    
+    public StudentAssignment getStudentAssignment(Student student, Assignment assignment);
     
     public StudentAssignment saveStudentAssignment(StudentAssignment studentAssignment);
 }

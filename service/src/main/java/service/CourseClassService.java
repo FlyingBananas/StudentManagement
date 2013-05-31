@@ -8,6 +8,8 @@ import java.util.List;
 import model.Course;
 import model.CourseClass;
 import model.CourseType;
+import model.Student;
+import model.StudentAttendance;
 
 /**
  *
@@ -17,6 +19,12 @@ public interface CourseClassService {
     
     public List<CourseClass> getCourseClassesFromCourseOfType(Course course,
             CourseType courseType);
+    
+    public List<StudentAttendance> getStudentAttendancesForCourseClass(
+            CourseClass courseClass); 
+    
+    public List<StudentAttendance> saveStudentAttendancesForCourseClass(
+            CourseClass courseClass, List<Student> students);
     
     public CourseClass saveCourseClass(CourseClass courseClass);
 }
