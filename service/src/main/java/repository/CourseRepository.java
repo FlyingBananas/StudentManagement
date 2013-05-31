@@ -17,7 +17,7 @@ public interface CourseRepository extends PagingAndSortingRepository<Course, Obj
 
     public List<Course> findByYearGreaterThan(int year);
 
-    public  List<Course> findByYearGreaterThan(int year, Sort sort);
+    public List<Course> findByYearGreaterThan(int year, Sort sort);
 
     public List<Course> findByYearLessThan(int year);
 
@@ -26,6 +26,5 @@ public interface CourseRepository extends PagingAndSortingRepository<Course, Obj
     public List<Course> findByYearBetween(int startngYear, int endYear);
 
     public List<Course> findByYearBetween(int startngYear, int endYear, Sort sort);
-
 
 }
