@@ -1,5 +1,8 @@
 package service;
 
+import java.util.List;
+import model.Student;
+
 /**
  * Use this interface instead of the Impl.
  *
@@ -7,5 +10,8 @@ package service;
  */
 public interface StudentService {
 
+    public List<Student> getAllStudents();
+    
+    public Student saveStudent(Student student);
 
 }

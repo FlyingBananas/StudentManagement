@@ -14,6 +14,7 @@ import repository.StudentRepository;
 
 import java.util.ArrayList;
 import java.util.List;
+import service.StudentService;
 
 /**
  * Created with IntelliJ IDEA.
@@ -24,11 +25,12 @@ import java.util.List;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:applicationContext.xml")
 public class StudentTest {
-
+    
     @Autowired
     StudentRepository studentRepository;
 
     @Test
+    @Ignore
     public void doSomething() {
         Student student = new Student();
         student.setName("Feri");
@@ -40,9 +42,11 @@ public class StudentTest {
 
         Assert.notEmpty(studentList);
     }
+    
 
 
     @Test
+    @Ignore
     public void testRetrieveStudent() {
 
         String matriculationNumber = "1234423232";
@@ -52,6 +56,7 @@ public class StudentTest {
     }
 
     @Test
+    @Ignore
     public void testInsertManyStudents() {
 
         List<Student> students = new ArrayList<Student>();
@@ -75,6 +80,7 @@ public class StudentTest {
     }
 
     @Test
+    @Ignore
     public void testLogin() {
 
         Student student2 = new Student();
