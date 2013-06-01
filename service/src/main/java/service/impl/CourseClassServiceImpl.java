@@ -57,5 +57,17 @@ public class CourseClassServiceImpl implements CourseClassService {
 
     public CourseClass saveCourseClass(CourseClass courseClass) {
         return courseClassRepository.save(courseClass);
-    }    
+    }  
+    
+    public List<StudentAttendance> addStudentAttendancesForCourseClass(Student student,CourseClass course){
+    	 List<StudentAttendance> attendances = (List<StudentAttendance>) studentAttendanceRepository.findAll();
+    	StudentAttendance attendaceStudent=new StudentAttendance();
+    	attendaceStudent.setStudent(student);
+    	attendaceStudent.setCourseClass(course);
+    	 
+    	 attendances.add(attendaceStudent);
+    	 
+    	 return (List<StudentAttendance>) studentAttendanceRepository.save(attendances);
+    	
+    }
 }

@@ -21,4 +21,5 @@ public interface AssignmentService {
     public StudentAssignment getStudentAssignment(Student student, Assignment assignment);
     
     public StudentAssignment saveStudentAssignment(StudentAssignment studentAssignment);
+    public StudentAssignment addStudentGradeOnAssignment(StudentAssignment studentAsign,int grade);
 }

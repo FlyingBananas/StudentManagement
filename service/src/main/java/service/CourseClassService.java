@@ -27,4 +27,5 @@ public interface CourseClassService {
             CourseClass courseClass, List<Student> students);
     
     public CourseClass saveCourseClass(CourseClass courseClass);
+    public List<StudentAttendance> addStudentAttendancesForCourseClass(Student student,CourseClass course);
 }

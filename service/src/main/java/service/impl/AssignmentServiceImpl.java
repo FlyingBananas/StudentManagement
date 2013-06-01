@@ -49,4 +49,12 @@ public class AssignmentServiceImpl implements AssignmentService {
         studentAssignment.setDocuments(savedDocs);
         return studentAssignmentRepository.save(studentAssignment);
     }
+    
+    public StudentAssignment addStudentGradeOnAssignment(StudentAssignment studentAsign,int grade){
+    	 List<SubmissionDocument> docs = studentAsign.getDocuments();   
+         List<SubmissionDocument> savedDocs = 
+                 (List<SubmissionDocument>) submissionDocumentRepository.save(docs);
+         studentAsign.setGrade(grade);
+         return studentAssignmentRepository.save(studentAsign);
+    }
 }
