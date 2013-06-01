@@ -22,6 +22,7 @@ import service.StudentService;
  * Date: 5/27/13
  * Time: 6:39 PM
  */
+///////
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:applicationContext.xml")
 public class StudentTest {
