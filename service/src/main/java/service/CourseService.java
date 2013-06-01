@@ -6,6 +6,8 @@ package service;
 
 import java.util.List;
 import model.Course;
+import model.Student;
+
 import org.bson.types.ObjectId;
 
 /**
@@ -20,4 +22,7 @@ public interface CourseService {
     
     public Course saveCourse(Course course);
     
+    public Course enrollStudentInCourse(Student student, Course course);
+    
+ 
 }

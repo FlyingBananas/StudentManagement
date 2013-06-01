@@ -24,7 +24,15 @@ public class Course {
         return id;
     }
 
-    public void setId(ObjectId id) {
+    public List<Student> getStudents() {
+		return students;
+	}
+
+	public void setStudents(List<Student> students) {
+		this.students = students;
+	}
+
+	public void setId(ObjectId id) {
         this.id = id;
     }
 

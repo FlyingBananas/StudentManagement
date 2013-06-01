@@ -4,6 +4,7 @@
  */
 package ServiceTests;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -22,6 +23,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.util.Assert;
+
+import repository.CourseRepository;
 import repository.StudentRepository;
 import repository.TeacherRepository;
 import service.CourseClassService;
@@ -45,6 +48,10 @@ public class CourseClassServiceTests {
     
     @Autowired
     StudentRepository studentRepository;
+    
+    @Autowired
+    CourseRepository courseRepository;
+    
     
     @Test
     public void getCourseClassesFromCourseOfType_GivenCourseAndType_ReturnsList()
@@ -106,6 +113,51 @@ public class CourseClassServiceTests {
         
         Assert.notNull(savedClass.getId());
         
+    }
+    
+    
+    @Test
+    public void testaddStudentAttendancesForCourseClass(){
+    	
+    	
+    	List<Teacher> ts =(List<Teacher>) teacherRepository.findAll();
+       
+    	 Teacher teacher=new Teacher();
+    	 teacher.setName("teacher");
+    	 teacher.setLogin(new LoginDetails("teacherU","teacherP"));
+    	 teacherRepository.save(teacher);
+        
+        
+        Course course=new Course();
+        course.setName("curs");
+        course.setStudents(new ArrayList<Student>());
+        course.setYear(2013);
+        courseRepository.save(course);
+        
+        
+        CourseClass courseClass = new CourseClass();
+        Calendar calendar = new GregorianCalendar(2013, 07, 25);
+        courseClass.setClassDate(calendar.getTime());
+        courseClass.setCourse(course);
+        courseClass.setTeacher(teacher);
+        courseClass.setType(CourseType.LECTURE);
+        courseClassService.saveCourseClass(courseClass);
+        LoginDetails login=new LoginDetails("testUser","testPass");
+        Student student=new Student();
+        student.setName("test");
+		student.setMatriculationNumber("321432423423");
+		student.setLogin(login);	
+        studentRepository.save(student);
+        
+        courseService.enrollStudentInCourse(student, course);
+        Assert.notNull(courseService.getAllCourses());
+        courseClassService.addStudentAttendancesForCourseClass(student, courseClass);
+        Assert.notNull(courseClassService.getStudentAttendancesForCourseClass(courseClass));
+        
+        
+     
+        
+    	
     }
     
     
