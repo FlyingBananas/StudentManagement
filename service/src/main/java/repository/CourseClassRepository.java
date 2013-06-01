@@ -48,8 +48,7 @@ public interface CourseClassRepository extends PagingAndSortingRepository<Course
     public List<CourseClass> findByCourseId(ObjectId objectId);
 
     public List<CourseClass> findByCourseId(ObjectId objectId, Sort sort);
-
-
-
+    
+    public List<CourseClass> findByCourseAndType(Course course, CourseType type);
 
 }

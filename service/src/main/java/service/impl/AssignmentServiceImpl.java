@@ -2,6 +2,7 @@ package service.impl;
 
 import java.util.List;
 import model.Assignment;
+import model.Student;
 import model.StudentAssignment;
 import model.SubmissionDocument;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,9 +29,17 @@ public class AssignmentServiceImpl implements AssignmentService {
     public List<Assignment> getAllAssignments() {
         return (List<Assignment>) assignmentRepository.findAll();
     }
+    
+    public List<Assignment> getAssignmentByName(String name) {
+        return assignmentRepository.findByName(name);
+    }
 
     public Assignment saveAssignment(Assignment assignment) {
         return assignmentRepository.save(assignment);
+    }
+    
+    public StudentAssignment getStudentAssignment(Student student, Assignment assignment) {
+        return studentAssignmentRepository.findOneByStudentAndAssignment(student, assignment);
     }
 
     public StudentAssignment saveStudentAssignment(StudentAssignment studentAssignment) {
@@ -40,9 +49,4 @@ public class AssignmentServiceImpl implements AssignmentService {
         studentAssignment.setDocuments(savedDocs);
         return studentAssignmentRepository.save(studentAssignment);
     }
-
-    public List<Assignment> getAssignmentByName(String name) {
-        return assignmentRepository.findByName(name);
-    }
-    
 }

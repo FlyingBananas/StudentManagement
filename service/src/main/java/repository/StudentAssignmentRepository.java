@@ -23,6 +23,8 @@ public interface StudentAssignmentRepository extends PagingAndSortingRepository<
     public List<StudentAssignment> findByStudent(Student student);
 
     public List<StudentAssignment> findByStudent(Student student, Sort sort);
+    
+    public StudentAssignment findOneByStudentAndAssignment(Student student, Assignment assignment);
 
     public List<StudentAssignment> findByStudentId(ObjectId id);
 
