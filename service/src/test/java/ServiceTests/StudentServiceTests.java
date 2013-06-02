@@ -5,7 +5,7 @@
 package ServiceTests;
 
 import java.util.List;
-import model.Student;
+import dbd.model.Student;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,8 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.util.Assert;
-import repository.StudentRepository;
-import service.StudentService;
+import dbd.repository.StudentRepository;
+import dbd.service.StudentService;
 
 /**
  * Created with IntelliJ IDEA.

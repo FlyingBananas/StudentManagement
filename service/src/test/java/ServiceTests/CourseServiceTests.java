@@ -5,7 +5,7 @@
 package ServiceTests;
 
 import java.util.List;
-import model.Course;
+import dbd.model.Course;
 import org.bson.types.ObjectId;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -14,7 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.util.Assert;
-import service.CourseService;
+import dbd.service.CourseService;
 
 /**
  *
