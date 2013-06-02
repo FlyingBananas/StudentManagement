@@ -33,7 +33,7 @@ public class StudentServiceTests {
     StudentRepository studentRepository;
     
     @Test
-    @Ignore
+    //@Ignore
     public void testInsertStudent() {
         Student student = new Student();
         student.setName("Vlad");
@@ -45,7 +45,7 @@ public class StudentServiceTests {
     }
     
     @Test
-    @Ignore
+    //@Ignore
     public void testGetAllStudents() {
         List<Student> students;
         
@@ -54,6 +54,17 @@ public class StudentServiceTests {
         Assert.notEmpty(students);
         
         
+    }
+    
+    @Test
+    public void testDeleteStudent() {
+        
+        List<Student> students;
+        students = studentService.getAllStudents();
+        
+        List<Student> studentsAfter;
+        studentsAfter =  studentService.deleteStudent(students.get(0));
+        Assert.isTrue(students.size() - 1 == studentsAfter.size());
     }
     
 }
