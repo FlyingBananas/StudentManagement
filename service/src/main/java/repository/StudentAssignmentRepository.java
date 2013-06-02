@@ -23,26 +23,28 @@ public interface StudentAssignmentRepository extends PagingAndSortingRepository<
     public List<StudentAssignment> findByStudent(Student student);
 
     public List<StudentAssignment> findByStudent(Student student, Sort sort);
+    
+    public StudentAssignment findOneByStudentAndAssignment(Student student, Assignment assignment);
 
     public List<StudentAssignment> findByStudentId(ObjectId id);
 
     public List<StudentAssignment> findByStudentId(ObjectId id, Sort sort);
 
-    public List<StudentAssignment> findBySubmissionDate(Date date);
+    public List<StudentAssignment> findBySubmission(Date date);
 
-    public List<StudentAssignment> findBySubmissionDate(Date date, Sort sort);
+    public List<StudentAssignment> findBySubmission(Date date, Sort sort);
 
-    public List<StudentAssignment> findBySubmissionDateBefore(Date date);
+    public List<StudentAssignment> findBySubmissionBefore(Date date);
 
-    public List<StudentAssignment> findBySubmissionDateBefore(Date date, Sort sort);
+    public List<StudentAssignment> findBySubmissionBefore(Date date, Sort sort);
 
-    public List<StudentAssignment> findBySubmissionDateAfter(Date date);
+    public List<StudentAssignment> findBySubmissionAfter(Date date);
 
-    public List<StudentAssignment> findBySubmissionDateAfter(Date date, Sort sort);
+    public List<StudentAssignment> findBySubmissionAfter(Date date, Sort sort);
 
-    public List<StudentAssignment> findBySubmissionDateBetween(Date start, Date end);
+    public List<StudentAssignment> findBySubmissionBetween(Date start, Date end);
 
-    public List<StudentAssignment> findBySubmissionDateBeteen(Date start, Date end, Sort sort);
+    public List<StudentAssignment> findBySubmissionBetween(Date start, Date end, Sort sort);
 
     public List<StudentAssignment> findByGrade(int grade);
 

@@ -17,21 +17,21 @@ public interface CourseClassRepository extends PagingAndSortingRepository<Course
 
     public List<CourseClass> findByType(CourseType type, Sort sort);
 
-    public List<CourseClass> findByDate(Date date);
+    public List<CourseClass> findByClassDate(Date date);
 
-    public List<CourseClass> findByDate(Date date, Sort sort);
+    public List<CourseClass> findByClassDate(Date date, Sort sort);
 
-    public List<CourseClass> findByDateBefore(Date date);
+    public List<CourseClass> findByClassDateBefore(Date date);
 
-    public List<CourseClass> findByDateBefore(Date date, Sort sort);
+    public List<CourseClass> findByClassDateBefore(Date date, Sort sort);
 
-    public List<CourseClass> findByDateAfter(Date date);
+    public List<CourseClass> findByClassDateAfter(Date date);
 
-    public List<CourseClass> findByDateAfter(Date date, Sort sort);
+    public List<CourseClass> findByClassDateAfter(Date date, Sort sort);
 
-    public List<CourseClass> findByDateBetween(Date start, Date end);
+    public List<CourseClass> findByClassDateBetween(Date start, Date end);
 
-    public List<CourseClass> findByDateBetween(Date start, Date end, Sort sort);
+    public List<CourseClass> findByClassDateBetween(Date start, Date end, Sort sort);
 
     public List<CourseClass> findByTeacher(Teacher teacher);
 
@@ -48,8 +48,7 @@ public interface CourseClassRepository extends PagingAndSortingRepository<Course
     public List<CourseClass> findByCourseId(ObjectId objectId);
 
     public List<CourseClass> findByCourseId(ObjectId objectId, Sort sort);
-
-
-
+    
+    public List<CourseClass> findByCourseAndType(Course course, CourseType type);
 
 }
