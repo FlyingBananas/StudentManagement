@@ -10,25 +10,9 @@
     <name>Database Final Project Root POM</name>
     <packaging>pom</packaging>
 
-    <repositories>
-    </repositories>
-
-    <pluginRepositories>
-        <pluginRepository>
-            <id>apache-plugin-snapshots</id>
-            <name>Apache Maven Plugins Snapshot Repository</name>
-            <url>http://people.apache.org/maven-snapshot-repository</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-        </pluginRepository>
-    </pluginRepositories>
-
     <properties>
-        <slf4j.version>1.5.8</slf4j.version>
+        <!--<slf4j.version>1.5.8</slf4j.version>-->
+        <slf4j.version>1.6.0</slf4j.version>
         <spring.version>3.1.0.RELEASE</spring.version>
         <javax.servlet.version>2.5</javax.servlet.version>
         <jackson-mapper-asl.version>1.9.5</jackson-mapper-asl.version>
@@ -41,7 +25,7 @@
         <commons-fileupload.version>1.2.2</commons-fileupload.version>
         <commons-lang.version>2.6</commons-lang.version>
 
-        <spring-data-mongodb.version>1.0.3.RELEASE</spring-data-mongodb.version>
+        <spring-data-mongodb.version>1.2.1.RELEASE</spring-data-mongodb.version>
     </properties>
 
 

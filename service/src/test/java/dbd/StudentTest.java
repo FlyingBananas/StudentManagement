@@ -78,6 +78,7 @@ public class StudentTest {
     }
 
     @Test
+    @Ignore
     public void testLogin() {
 
         Student student2 = new Student();
