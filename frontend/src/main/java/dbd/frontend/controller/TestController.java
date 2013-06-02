@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 @Controller
 public class TestController {
 
-
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String showTestPage(HttpServletRequest request, HttpServletResponse response,  Model model) {
 

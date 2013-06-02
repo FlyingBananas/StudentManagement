@@ -76,6 +76,7 @@ public class AssignmentServiceTests {
     }
     
     @Test
+    @Ignore
     public void saveStudentAssignment_WhenCalled_SavesAssignemnt(){
         StudentAssignment studentAssignment = new StudentAssignment();
         
