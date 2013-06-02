@@ -13,8 +13,9 @@ http://www.springframework.org/schema/aop
 http://www.springframework.org/schema/context ">
 
     <context:annotation-config/>
-    <context:component-scan base-package="dbd.frontend"/>
+    <context:component-scan base-package="dbd"/>
 
+    <import resource="classpath:applicationContext.xml"/>
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 
         <property name="prefix">
@@ -30,6 +31,4 @@ http://www.springframework.org/schema/context ">
           id="messageSource">
         <property name="basename" value="messages"/>
     </bean>
-
-    <tx:annotation-driven/>
 </beans>

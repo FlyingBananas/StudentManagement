@@ -7,10 +7,10 @@ package ServiceTests;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import model.Assignment;
-import model.Student;
-import model.StudentAssignment;
-import model.SubmissionDocument;
+import dbd.model.Assignment;
+import dbd.model.Student;
+import dbd.model.StudentAssignment;
+import dbd.model.SubmissionDocument;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -18,9 +18,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.util.Assert;
-import repository.StudentRepository;
-import repository.SubmissionDocumentRepository;
-import service.AssignmentService;
+import dbd.repository.StudentRepository;
+import dbd.service.AssignmentService;
 
 /**
  *
@@ -29,6 +28,7 @@ import service.AssignmentService;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:applicationContext.xml")
 public class AssignmentServiceTests {
+
     @Autowired
     AssignmentService assignmentService;
     

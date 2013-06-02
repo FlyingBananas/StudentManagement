@@ -6,16 +6,15 @@ package ServiceTests;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
-import model.Course;
-import model.CourseClass;
-import model.CourseType;
-import model.LoginDetails;
-import model.Student;
-import model.StudentAttendance;
-import model.Teacher;
+import dbd.model.Course;
+import dbd.model.CourseClass;
+import dbd.model.CourseType;
+import dbd.model.LoginDetails;
+import dbd.model.Student;
+import dbd.model.StudentAttendance;
+import dbd.model.Teacher;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -24,11 +23,11 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.util.Assert;
 
-import repository.CourseRepository;
-import repository.StudentRepository;
-import repository.TeacherRepository;
-import service.CourseClassService;
-import service.CourseService;
+import dbd.repository.CourseRepository;
+import dbd.repository.StudentRepository;
+import dbd.repository.TeacherRepository;
+import dbd.service.CourseClassService;
+import dbd.service.CourseService;
 
 /**
  *
