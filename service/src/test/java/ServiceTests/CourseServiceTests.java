@@ -28,6 +28,7 @@ public class CourseServiceTests {
     CourseService courseService;
     
     @Test
+    @Ignore
     public void getAllCourses_WhenCalled_ReturnsCourses()
     {
         List<Course> courses = courseService.getAllCourses();
@@ -36,6 +37,7 @@ public class CourseServiceTests {
     }
     
     @Test
+    @Ignore
     public void getCourse_GivenIdFromList_ReturnsCourse()
     {
         List<Course> courses = courseService.getAllCourses();

@@ -10,28 +10,6 @@
     <name>Database Final Project Root POM</name>
     <packaging>pom</packaging>
 
-    <repositories>
-        <repository>
-            <id>spring-release</id>
-            <name>Spring Maven Release Repository</name>
-            <url>http://repo.springsource.org/libs-release</url>
-        </repository>
-    </repositories>
-
-    <pluginRepositories>
-        <pluginRepository>
-            <id>apache-plugin-snapshots</id>
-            <name>Apache Maven Plugins Snapshot Repository</name>
-            <url>http://people.apache.org/maven-snapshot-repository</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-        </pluginRepository>
-    </pluginRepositories>
-
     <properties>
         <!--<slf4j.version>1.5.8</slf4j.version>-->
         <slf4j.version>1.6.0</slf4j.version>
@@ -64,10 +42,14 @@
                 <version>4.8.1</version>
                 <scope>test</scope>
             </dependency>
-
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-all</artifactId>
+                <version>1.9.0</version>
+                <scope>test</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
-
 
 
     <build>

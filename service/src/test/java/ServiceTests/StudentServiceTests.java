@@ -6,6 +6,7 @@ package ServiceTests;
 
 import java.util.List;
 import model.Student;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +33,7 @@ public class StudentServiceTests {
     StudentRepository studentRepository;
     
     @Test
+    @Ignore
     public void testInsertStudent() {
         Student student = new Student();
         student.setName("Vlad");
@@ -43,6 +45,7 @@ public class StudentServiceTests {
     }
     
     @Test
+    @Ignore
     public void testGetAllStudents() {
         List<Student> students;
         

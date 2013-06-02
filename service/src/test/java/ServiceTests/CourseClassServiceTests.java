@@ -54,6 +54,7 @@ public class CourseClassServiceTests {
     
     
     @Test
+    @Ignore
     public void getCourseClassesFromCourseOfType_GivenCourseAndType_ReturnsList()
     {
         Course course = courseService.getAllCourses().get(0);
@@ -66,6 +67,7 @@ public class CourseClassServiceTests {
     }
     
     @Test
+    @Ignore
     public void getStudentAttendancesForCourseClass_GivenCourseClass_ReturnsList(){
         Course course = courseService.getAllCourses().get(0);
         CourseClass courseClass = 
@@ -117,6 +119,7 @@ public class CourseClassServiceTests {
     
     
     @Test
+    @Ignore
     public void testaddStudentAttendancesForCourseClass(){
     	
     	
