@@ -14,7 +14,8 @@ http://www.springframework.org/schema/context ">
 
     <context:annotation-config/>
     <context:component-scan base-package="dbd.frontend"/>
-
+    <context:component-scan base-package="service"/>
+    <import resource="classpath:applicationContext.xml"/>
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 
         <property name="prefix">

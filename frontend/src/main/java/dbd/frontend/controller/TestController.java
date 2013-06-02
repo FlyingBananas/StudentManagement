@@ -7,10 +7,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.springframework.beans.factory.annotation.Autowired;
+import service.AssignmentService;
 
 @Controller
 public class TestController {
 
+    @Autowired
+    AssignmentService service;
+    
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String showTestPage(HttpServletRequest request, HttpServletResponse response,  Model model) {
 
