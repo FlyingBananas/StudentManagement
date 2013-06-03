@@ -7,4 +7,5 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 
 public interface AssignmentRepository extends PagingAndSortingRepository<Assignment, ObjectId>{
     public List<Assignment> findByName(String name);
+    public Assignment findById(int id);
 }

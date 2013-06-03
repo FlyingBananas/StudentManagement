@@ -45,7 +45,7 @@ public class AssignmentServiceTests {
         Assert.notEmpty(assignments);
     }
     
-    @Test 
+   // @Test 
     public void getStudentAssignment_GivenStudentAndAssignment_ReturnStudentAssignment()
     {
         Student student = studentRepository.findByName("Feri").get(0);
@@ -61,7 +61,7 @@ public class AssignmentServiceTests {
     }
     
     @Test
-    @Ignore
+
     public void saveAssignment_WhenCalled_SavesAssignemnt(){
         Assignment a = new Assignment();
         a.setDeadline(new Date());

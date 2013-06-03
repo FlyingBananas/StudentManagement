@@ -94,5 +94,21 @@ public class StudentTest {
         Assert.notNull(result);
     }
 
+    @Test
+    public void testLoginUser() {
+
+        Student student2 = new Student();
+        student2.setName("admin");
+        student2.setMatriculationNumber("455");
+        student2.setLogin(new LoginDetails("admin", "admin"));
+        student2.setRole(0);
+
+        studentRepository.save(student2);
+
+        Student result = studentRepository.findOneByLoginUsernameAndLoginPassword("a", "a");
+
+        Assert.notNull(result);
+    }
+
 
 }
