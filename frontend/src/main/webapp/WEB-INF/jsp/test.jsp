@@ -6,8 +6,8 @@
 
 <p> Test variable value <b>foo</b>: ${foo} </p>
 
-<form method="POST" action="test/change-bar">
-    <input type="submit" value="Change Bar Variable " />
+<form method="POST" action="frontend/assignments/">
+    <input type="submit" value="Assignments " />
 
 </form>
 
