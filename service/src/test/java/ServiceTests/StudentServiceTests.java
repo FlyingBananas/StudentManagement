@@ -33,7 +33,7 @@ public class StudentServiceTests {
     StudentRepository studentRepository;
     
     @Test
-    //@Ignore
+    @Ignore
     public void testInsertStudent() {
         Student student = new Student();
         student.setName("Vlad");
@@ -45,7 +45,7 @@ public class StudentServiceTests {
     }
     
     @Test
-    //@Ignore
+    @Ignore
     public void testGetAllStudents() {
         List<Student> students;
         
@@ -57,6 +57,7 @@ public class StudentServiceTests {
     }
     
     @Test
+    @Ignore
     public void testDeleteStudent() {
         
         List<Student> students;

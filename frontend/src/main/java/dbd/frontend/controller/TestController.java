@@ -10,6 +10,7 @@ import dbd.service.AssignmentService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @Controller
 public class TestController {
@@ -20,7 +21,10 @@ public class TestController {
     @Autowired
     StudentService studentService;
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @Autowired
+    AssignmentService service;
+    
+    @RequestMapping(value = "/test", method = RequestMethod.GET)
     public String showTestPage(HttpServletRequest request, HttpServletResponse response,  Model model) {
 
         String bar = "bar";

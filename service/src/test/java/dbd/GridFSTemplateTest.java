@@ -17,6 +17,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
+import org.junit.Ignore;
 
 /**
  * Created with IntelliJ IDEA.
@@ -32,6 +33,7 @@ public class GridFSTemplateTest {
     GridFsTemplate template;
 
     @Test
+    @Ignore
     public void testGridFSOperations() throws IOException {
 
         /*

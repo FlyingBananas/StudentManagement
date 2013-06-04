@@ -11,7 +11,7 @@
        
             <font color="red"><c:out value='${error}'/></font>
        <br>
-		<form:form action="../frontend/login" method="post"
+		<form:form action="../Frontend/login" method="post"
 			modelAttribute="loginForm">
 			<table>
 

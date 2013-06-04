@@ -38,12 +38,10 @@ public class CourseServiceImpl implements CourseService {
         return courseRepository.save(course);
     }
 
-	public Course enrollStudentInCourse(Student student, Course course) {
-		course.getStudents().add(student);
-		
-		return courseRepository.save(course);
-		
-	}
+    public Course enrollStudentInCourse(Student student, Course course) {
+        course.getStudents().add(student);
+        return courseRepository.save(course);
+    }
 
     
 }

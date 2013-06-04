@@ -30,6 +30,7 @@ public class StudentTest {
     StudentRepository studentRepository;
 
     @Test
+    @Ignore
     public void doSomething() {
         Student student = new Student();
         student.setName("Feri");
@@ -42,8 +43,6 @@ public class StudentTest {
         Assert.notEmpty(studentList);
     }
     
-
-
     @Test
     @Ignore
     public void testRetrieveStudent() {
@@ -95,13 +94,13 @@ public class StudentTest {
     }
 
     @Test
+    @Ignore
     public void testLoginUser() {
 
         Student student2 = new Student();
         student2.setName("admin");
         student2.setMatriculationNumber("455");
         student2.setLogin(new LoginDetails("admin", "admin"));
-        student2.setRole(0);
 
         studentRepository.save(student2);
 
