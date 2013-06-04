@@ -14,6 +14,4 @@ public interface LoginService {
     public Teacher tryLoginAsTeacher(String username, String password);
 
     public Student tryLoginAsStudent(String username, String password);
-    
-    public  User getUserByUsername(String username, String password);
 }

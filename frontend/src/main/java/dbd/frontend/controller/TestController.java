@@ -22,15 +22,9 @@ public class TestController {
     StudentService studentService;
 
     @Autowired
-    AssignmentService assignmentService;
-
-    @Autowired
-    StudentService studentService;
-
-    @Autowired
     AssignmentService service;
     
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = "/test", method = RequestMethod.GET)
     public String showTestPage(HttpServletRequest request, HttpServletResponse response,  Model model) {
 
         String bar = "bar";

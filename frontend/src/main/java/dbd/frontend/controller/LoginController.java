@@ -40,23 +40,22 @@ public class LoginController {
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String login(@ModelAttribute("loginForm") LoginDetails loginForm,
             BindingResult result, Model model, HttpSession session) {
+        
+        String username = loginForm.getUsername();
+        String password = loginForm.getPassword();
 
-        User user = loginService.getUserByUsername(loginForm.getUsername(), loginForm.getPassword());
-
-        if (user == null) {
-            model.addAttribute("error", "Incorrect username or password! Please try again!");
-            return "login/loginForm";
-        } else {
-            int role = user.getRole();
-            String username = user.getLogin().getUsername();
-            if (role == 1) { //regular user
-                session.setAttribute("username", username);
-                return "redirect:../frontend/chooseAssignment";
-            } else if (role == 0) {
-                session.setAttribute("username", username);
-                return "redirect:../frontend/viewAssignments";
-            }
-        }    
+        User user = loginService.tryLoginAsTeacher(username, password);  
+        if (user != null) {     
+            session.setAttribute("user", user);
+            return "redirect:../Frontend/viewAssignments";     
+        } 
+        
+        user = loginService.tryLoginAsStudent(loginForm.getUsername(), loginForm.getPassword());   
+        if (user != null) {  
+            session.setAttribute("user", user);
+            return "redirect:../Frontend/chooseAssignment";
+        }
+          
         model.addAttribute("error", "Incorrect username or password! Please try again!");
         return "login/loginForm";
     }

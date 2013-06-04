@@ -27,6 +27,4 @@ public class LoginServiceImpl implements LoginService{
     public Student tryLoginAsStudent(String username, String password) {
         return studentRepository.findOneByLoginUsernameAndLoginPassword(username, password);
     }
-
-
 }

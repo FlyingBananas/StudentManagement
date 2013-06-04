@@ -61,7 +61,7 @@ public class AssignmentServiceTests {
     }
     
     @Test
-
+    @Ignore
     public void saveAssignment_WhenCalled_SavesAssignemnt(){
         Assignment a = new Assignment();
         a.setDeadline(new Date());
