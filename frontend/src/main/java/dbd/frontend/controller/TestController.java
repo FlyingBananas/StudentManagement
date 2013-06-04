@@ -1,17 +1,25 @@
 package dbd.frontend.controller;
 
+import dbd.service.StudentService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import dbd.service.AssignmentService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
-import service.AssignmentService;
 
 @Controller
 public class TestController {
+
+    @Autowired
+    AssignmentService assignmentService;
+
+    @Autowired
+    StudentService studentService;
 
     @Autowired
     AssignmentService service;
@@ -28,6 +36,8 @@ public class TestController {
     public String changeBar(HttpServletRequest request, HttpServletResponse response,  Model model) {
         String bar = "banana";
         model.addAttribute("foo", bar);
+
+        System.out.println(studentService.getAllStudents());
         return "test";
     }
 

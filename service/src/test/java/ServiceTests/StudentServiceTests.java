@@ -5,7 +5,7 @@
 package ServiceTests;
 
 import java.util.List;
-import model.Student;
+import dbd.model.Student;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,8 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.util.Assert;
-import repository.StudentRepository;
-import service.StudentService;
+import dbd.repository.StudentRepository;
+import dbd.service.StudentService;
 
 /**
  * Created with IntelliJ IDEA.
@@ -33,7 +33,7 @@ public class StudentServiceTests {
     StudentRepository studentRepository;
     
     @Test
-    @Ignore
+    //@Ignore
     public void testInsertStudent() {
         Student student = new Student();
         student.setName("Vlad");
@@ -45,7 +45,7 @@ public class StudentServiceTests {
     }
     
     @Test
-    @Ignore
+    //@Ignore
     public void testGetAllStudents() {
         List<Student> students;
         
@@ -54,6 +54,17 @@ public class StudentServiceTests {
         Assert.notEmpty(students);
         
         
+    }
+    
+    @Test
+    public void testDeleteStudent() {
+        
+        List<Student> students;
+        students = studentService.getAllStudents();
+        
+        List<Student> studentsAfter;
+        studentsAfter =  studentService.deleteStudent(students.get(0));
+        Assert.isTrue(students.size() - 1 == studentsAfter.size());
     }
     
 }

@@ -1,7 +1,7 @@
 package dbd;
 
-import model.LoginDetails;
-import model.Student;
+import dbd.model.LoginDetails;
+import dbd.model.Student;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -10,11 +10,10 @@ import org.springframework.data.domain.Sort;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.util.Assert;
-import repository.StudentRepository;
+import dbd.repository.StudentRepository;
 
 import java.util.ArrayList;
 import java.util.List;
-import service.StudentService;
 
 /**
  * Created with IntelliJ IDEA.
@@ -31,7 +30,6 @@ public class StudentTest {
     StudentRepository studentRepository;
 
     @Test
-    @Ignore
     public void doSomething() {
         Student student = new Student();
         student.setName("Feri");
