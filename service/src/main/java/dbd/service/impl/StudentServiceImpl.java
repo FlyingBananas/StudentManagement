@@ -16,6 +16,10 @@ public class StudentServiceImpl implements StudentService{
 
     @Autowired
     StudentRepository studentRepository;
+    
+    public Student getStudent(String id) {
+        return studentRepository.findOne(id);
+    }
 
     public List<Student> getAllStudents() {
         return (List<Student>) studentRepository.findAll();
@@ -39,8 +43,5 @@ public class StudentServiceImpl implements StudentService{
         }
         return students;
     }
-    
-    
-
 
 }

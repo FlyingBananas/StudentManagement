@@ -10,6 +10,7 @@ import dbd.model.CourseClass;
 import dbd.model.CourseType;
 import dbd.model.Student;
 import dbd.model.StudentAttendance;
+import org.bson.types.ObjectId;
 
 /**
  *
@@ -19,6 +20,8 @@ public interface CourseClassService {
     
     public List<CourseClass> getCourseClassesFromCourseOfType(Course course,
             CourseType courseType);
+    
+     public CourseClass getCourseClass(ObjectId id);
     
     public List<StudentAttendance> getStudentAttendancesForCourseClass(
             CourseClass courseClass); 

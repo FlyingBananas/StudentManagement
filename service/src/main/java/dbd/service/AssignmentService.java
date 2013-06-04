@@ -4,6 +4,7 @@ import java.util.List;
 import dbd.model.Assignment;
 import dbd.model.Student;
 import dbd.model.StudentAssignment;
+import org.bson.types.ObjectId;
 
 /**
  * Use this interface instead of the Impl.
@@ -15,6 +16,8 @@ public interface AssignmentService {
     public List<Assignment> getAllAssignments();
     
     public List<Assignment> getAssignmentByName(String name);
+    
+    public Assignment getAssignment(ObjectId id);
     
     public Assignment saveAssignment(Assignment assignment);
     

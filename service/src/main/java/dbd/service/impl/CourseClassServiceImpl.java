@@ -17,6 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 import dbd.repository.CourseClassRepository;
 import dbd.repository.StudentAttendanceRepository;
 import dbd.service.CourseClassService;
+import org.bson.types.ObjectId;
 
 /**
  *
@@ -31,6 +32,10 @@ public class CourseClassServiceImpl implements CourseClassService {
     
     @Autowired
     StudentAttendanceRepository studentAttendanceRepository;
+    
+    public CourseClass getCourseClass(ObjectId id) {
+        return courseClassRepository.findOne(id);
+    }
 
     public List<CourseClass> getCourseClassesFromCourseOfType(Course course, 
             CourseType courseType) {
@@ -70,4 +75,6 @@ public class CourseClassServiceImpl implements CourseClassService {
     	 return (List<StudentAttendance>) studentAttendanceRepository.save(attendances);
     	
     }
+
+    
 }

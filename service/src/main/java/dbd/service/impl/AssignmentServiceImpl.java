@@ -12,6 +12,7 @@ import dbd.repository.AssignmentRepository;
 import dbd.repository.StudentAssignmentRepository;
 import dbd.repository.SubmissionDocumentRepository;
 import dbd.service.AssignmentService;
+import org.bson.types.ObjectId;
 
 @Service
 @Transactional
@@ -32,6 +33,10 @@ public class AssignmentServiceImpl implements AssignmentService {
     
     public List<Assignment> getAssignmentByName(String name) {
         return assignmentRepository.findByName(name);
+    }
+        
+    public Assignment getAssignment(ObjectId id) {
+        return assignmentRepository.findOne(id);
     }
 
     public Assignment saveAssignment(Assignment assignment) {
@@ -57,4 +62,5 @@ public class AssignmentServiceImpl implements AssignmentService {
          studentAsign.setGrade(grade);
          return studentAssignmentRepository.save(studentAsign);
     }
+
 }
