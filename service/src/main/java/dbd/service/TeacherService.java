@@ -1,5 +1,7 @@
 package dbd.service;
 
+import dbd.model.Teacher;
+
 /**
  * Use this interface instead of the Impl.
  *
@@ -7,5 +9,5 @@ package dbd.service;
  */
 public interface TeacherService {
 
-
+ public Teacher saveTeacher(Teacher teacher);
 }
