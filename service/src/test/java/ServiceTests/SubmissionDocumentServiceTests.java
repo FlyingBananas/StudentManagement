@@ -38,6 +38,7 @@ public class SubmissionDocumentServiceTests {
     }
     
     @Test
+    @Ignore
     public void saveSubmissionDocument_GivenFile_StoresFile() {
         List<StudentAssignment> assignments = 
                 (List<StudentAssignment>) studentAssignmentRepository.findAll();

@@ -30,9 +30,9 @@
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
         <!-- Including the HTML5 Uploader plugin -->
-       <!-- <script src="js/jquery.filedrop.js"></script>-->
+       <script src="js/jquery.filedrop.js"></script>
 
         <!-- The main script file -->
-        <!-- <script src="js/script.js"></script>-->
+        <script src="js/script.js"></script>
     </body>
 </html>
