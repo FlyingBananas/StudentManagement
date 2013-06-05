@@ -14,6 +14,8 @@ public interface SubmissionDocumentService {
     public List<SubmissionDocument> getAllSubmissionDocuments(ObjectId id);
 
     public List<SubmissionDocument> getSubmissionDocumentByName(String name);
+    
+    public SubmissionDocument saveSubmissionDocument(SubmissionDocument document);
 
     public boolean storeFile(String path, String fileName);
     

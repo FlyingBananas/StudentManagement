@@ -20,8 +20,6 @@ public class SubmissionDocument {
     @DBRef
     private StudentAssignment studentAssignment;
 
-    
-
     public ObjectId getId() {
         return id;
     }

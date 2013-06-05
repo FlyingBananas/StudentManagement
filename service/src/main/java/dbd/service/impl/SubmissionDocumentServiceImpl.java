@@ -76,4 +76,11 @@ public class SubmissionDocumentServiceImpl implements SubmissionDocumentService 
         query.addCriteria(Criteria.where("filename").is(fileName));
         template.delete(query);
     }
+
+    public SubmissionDocument saveSubmissionDocument(SubmissionDocument document) {
+        String fileName = document.getName();
+        String path = document.getPath();
+        storeFile(path, fileName);
+        return submissionDocumentRepository.save(document);
+    }
 }

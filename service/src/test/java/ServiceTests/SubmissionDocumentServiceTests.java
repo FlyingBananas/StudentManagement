@@ -31,6 +31,20 @@ public class SubmissionDocumentServiceTests {
         
         Assert.notEmpty(submissionDocuments);
     }
+    
+    @Test
+    @Ignore
+    public void saveSubmissionDocument_GivenFile_StoresFile() {
+        SubmissionDocument document = new SubmissionDocument();
+        document.setDescription("nik");
+        document.setName("TestFile");
+        document.setPath("D:\\TestFile.doc");
+        
+        SubmissionDocument saveddoc = 
+                submissionDocumentService.saveSubmissionDocument(document);
+            
+        Assert.notNull(saveddoc.getId());
+    }
 
 //    @Test
 //    public List<SubmissionDocument> getSubmissionDocumentByName(String name);
