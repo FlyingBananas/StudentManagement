@@ -47,13 +47,13 @@ public class LoginController {
         User user = loginService.tryLoginAsTeacher(username, password);  
         if (user != null) {     
             session.setAttribute("user", user);
-            return "redirect:../Frontend/viewAssignments";     
+            return "redirect:../frontend/viewAssignments";     
         } 
         
         user = loginService.tryLoginAsStudent(loginForm.getUsername(), loginForm.getPassword());   
         if (user != null) {  
             session.setAttribute("user", user);
-            return "redirect:../Frontend/chooseAssignment";
+            return "redirect:../frontend/chooseAssignment";
         }
           
         model.addAttribute("error", "Incorrect username or password! Please try again!");

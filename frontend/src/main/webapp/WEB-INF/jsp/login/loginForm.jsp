@@ -11,7 +11,7 @@
        
             <font color="red"><c:out value='${error}'/></font>
        <br>
-		<form:form action="../Frontend/login" method="post"
+		<form:form action="../frontend/login" method="post"
 			modelAttribute="loginForm">
 			<table>
 
@@ -36,12 +36,28 @@
 					<td><input type="submit" value="Log in" /></td>
 
 				</tr>
+                                <tr></tr>
+                                <tr></tr>
+                                
 
 			</table>
 
 
 		</form:form>
-	</div>
+	
+       <table>
+           
+               <tr>
+			<td>New here?<FONT color="black"></FONT></td>
+			<td>
+                            <form action="../frontend/registerForm" method="GET"> 
+                            <input type="submit" value="Register">
+                            </form>
+                         </td>
+
+		</tr>   
+         </table>  
+       </div>
 </body>
 </html>
 
