@@ -1,8 +1,10 @@
 package ServiceTests;
 
+import dbd.model.StudentAssignment;
 import dbd.service.*;
 import java.util.List;
 import dbd.model.SubmissionDocument;
+import dbd.repository.StudentAssignmentRepository;
 import dbd.repository.StudentRepository;
 import org.bson.types.ObjectId;
 import org.junit.Ignore;
@@ -21,6 +23,9 @@ public class SubmissionDocumentServiceTests {
     SubmissionDocumentService submissionDocumentService;
     
     @Autowired
+    StudentAssignmentRepository studentAssignmentRepository;
+    
+    @Autowired
     StudentRepository studentRepository;
     
     @Test
@@ -33,15 +38,17 @@ public class SubmissionDocumentServiceTests {
     }
     
     @Test
-    @Ignore
     public void saveSubmissionDocument_GivenFile_StoresFile() {
+        List<StudentAssignment> assignments = 
+                (List<StudentAssignment>) studentAssignmentRepository.findAll();
+        StudentAssignment assignment = assignments.get(0);
         SubmissionDocument document = new SubmissionDocument();
         document.setDescription("nik");
         document.setName("TestFile");
         document.setPath("D:\\TestFile.doc");
         
         SubmissionDocument saveddoc = 
-                submissionDocumentService.saveSubmissionDocument(document);
+                submissionDocumentService.saveSubmissionDocument(assignment.getId(),document);
             
         Assert.notNull(saveddoc.getId());
     }

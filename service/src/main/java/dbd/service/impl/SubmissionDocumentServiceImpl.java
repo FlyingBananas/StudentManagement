@@ -1,8 +1,10 @@
 package dbd.service.impl;
 
 import com.mongodb.gridfs.GridFSDBFile;
+import dbd.model.StudentAssignment;
 import java.util.List;
 import dbd.model.SubmissionDocument;
+import dbd.repository.StudentAssignmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -25,6 +27,10 @@ public class SubmissionDocumentServiceImpl implements SubmissionDocumentService 
 
     @Autowired
     SubmissionDocumentRepository submissionDocumentRepository;
+    
+    @Autowired
+    StudentAssignmentRepository studentAssignmentRepository;
+    
     @Autowired
     GridFsTemplate template;
 
@@ -35,6 +41,22 @@ public class SubmissionDocumentServiceImpl implements SubmissionDocumentService 
     public List<SubmissionDocument> getSubmissionDocumentByName(String name) {
         return (List<SubmissionDocument>) submissionDocumentRepository.findByName(name);
 
+    }
+    
+    public SubmissionDocument saveSubmissionDocument(ObjectId studentAssignmentId, SubmissionDocument document) {
+        StudentAssignment assignment = studentAssignmentRepository.findOne(studentAssignmentId);
+        String fileName = document.getName();
+        String path = document.getPath();
+        storeFile(path, fileName);
+        SubmissionDocument savedDocument = 
+                submissionDocumentRepository.save(document); 
+        
+        assignment.getDocuments().add(savedDocument);
+        
+        studentAssignmentRepository.save(assignment);
+        
+        return savedDocument;
+        
     }
 
     public boolean storeFile(String path, String fileName) {
@@ -51,7 +73,6 @@ public class SubmissionDocumentServiceImpl implements SubmissionDocumentService 
         } finally {
             return success;
         }
-
     }
 
     public boolean retrieveFile(String fileName) {
@@ -77,10 +98,5 @@ public class SubmissionDocumentServiceImpl implements SubmissionDocumentService 
         template.delete(query);
     }
 
-    public SubmissionDocument saveSubmissionDocument(SubmissionDocument document) {
-        String fileName = document.getName();
-        String path = document.getPath();
-        storeFile(path, fileName);
-        return submissionDocumentRepository.save(document);
-    }
+    
 }
