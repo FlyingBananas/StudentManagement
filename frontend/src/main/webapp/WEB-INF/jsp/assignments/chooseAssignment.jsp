@@ -29,7 +29,7 @@
 			<TR>
 
 				<td><a style="color: #000"
-					href="/frontend/assignments/${assign.name}"><font
+					href="/Frontend/assignments/upload/${assign.id}"><font
 						color="black"><c:out value="${assign.name}" /></font></a></td>
 				<td><font color="black"><c:out value="${assign.description}" /></font></td>
 				<td><font color="black"><c:out value="${assign.deadline}" /></font></td>

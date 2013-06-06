@@ -16,7 +16,7 @@
 	style="margin-left: auto; margin-right: auto; width: 400px; margin-top: 75px;">
 
            <a style="color: #000"
-					href="/frontend/assignments/add"><font
+					href="/Frontend/assignments/add"><font
 						color="black">Add assignment</font></a>
                                                 
 	<table id="assignView" width="400" align="center" border="1">
@@ -35,7 +35,7 @@
 			<TR>
 
 				<td><a style="color: #000"
-					href="/frontend/assignments/${assign.name}"><font
+					href="/Frontend/assignments/${assign.id}"><font
 						color="black"><c:out value="${assign.name}" /></font></a></td>
 				<td><font color="black"><c:out value="${assign.description}" /></font></td>
 				<td><font color="black"><c:out value="${assign.deadline}" /></font></td>
