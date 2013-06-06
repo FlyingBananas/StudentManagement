@@ -20,7 +20,8 @@
 
                 <table>
 
-                    <tr>
+                    <tr>   
+                        
                         <td>
                              <form:label path="username">Username</form:label>
                         </td>
